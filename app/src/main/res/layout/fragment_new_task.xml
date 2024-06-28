@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragments.NewTaskFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/create_task"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="@string/enter_task_information" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleDueDate"
+                    style="@style/TextSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/dateAndTimePicker"
+                    android:layout_alignBottom="@+id/dateAndTimePicker"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/due_date"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/dateAndTimePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editText"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/montserrat_medium_500"
+                    android:text="@string/due_date"
+                    app:chipIcon="@drawable/ic_baseline_date_range_24" />
+
+                <RelativeLayout
+                    android:id="@+id/rlTaskStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitleDueDate">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTaskStatus"
+                        style="@style/TextSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="@string/task_status"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/isCompleted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/tvTaskStatus"
+                        android:fontFamily="@string/medium"
+                        android:text="@string/completed" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlTaskStatus"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/priorityText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/priority"
+                        style="@style/TextSubTitle"
+                        app:chipIcon="@drawable/ic_baseline_priority_high_24" />
+
+                    <!--                    <com.google.android.material.chip.Chip-->
+                    <!--                        android:id="@+id/priorityText"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="10dp"-->
+                    <!--                        android:text="@string/priority"-->
+                    <!--                        app:chipIcon="@drawable/ic_baseline_priority_high_24" />-->
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/priorityChipGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:checkedChip="@id/low"
+                        app:selectionRequired="true"
+                        android:layout_toEndOf="@+id/priorityText"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/low"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="@string/low" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/mid"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/medium" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/high"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="@string/high" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/categoryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/category"
+                        android:layout_marginTop="10dp"
+                        style="@style/TextSubTitle"
+                        android:layout_below="@+id/priorityChipGroup"
+                        app:chipIcon="@drawable/ic_baseline_category_24" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/categoryChipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:layout_toEndOf="@+id/categoryText"
+                        app:chipSpacingHorizontal="4dp"
+                        app:chipSpacingVertical="1dp"
+                        app:selectionRequired="true"
+                        app:singleSelection="true"
+                        android:layout_below="@+id/priorityChipGroup">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/add_new_category" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/new_task"
+            app:icon="@drawable/ic_baseline_keyboard_arrow_up_24"
+            app:iconGravity="end"
+            app:iconPadding="3dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
