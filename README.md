@@ -7,7 +7,7 @@
 </p>
 
 <p >  
-ToDoList App demonstrates modern Android development with Hilt, Coroutines, LiveData, Jetpack (Room, ViewModel), and Material 3 Design based on MVVM architecture. 
+Task Tracker App demonstrates modern Android development with Hilt, Coroutines, LiveData, Jetpack (Room, ViewModel), and Material 3 Design based on MVVM architecture. 
 </p>
 
 
@@ -26,6 +26,6 @@ ToDoList App demonstrates modern Android development with Hilt, Coroutines, Live
 - [ColorPicker](https://github.com/QuadFlask/colorpicker): Simple android color picker with color wheel and lightness bar.
 
 ## Architecture
-**ToDoListApp** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
+**Task Tracker APP ** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
 ## Room Database Structure
